@@ -5,7 +5,9 @@ steps:
       [
         "beta", "deploy", "releases", "promote",
         "--delivery-pipeline", "${_PIPELINE_NAME}",
+        "--region", "${_LOCATION}",
         "--release", "release-${SHORT_SHA}"
       ]
 substitutions:
   _PIPELINE_NAME: springboot-demo-pipeline # default value
+  _LOCATION: us-central1 # default value
