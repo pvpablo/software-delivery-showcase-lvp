@@ -7,7 +7,8 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'push', '${_IMAGE_PATH}']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    args: - "gcloud beta deploy releases create release-$SHORT_SHA"
+    args: 
+    - "gcloud beta deploy releases create release-$SHORT_SHA"
     - "--project=${_PROJECT_ID}"
     - "--region=${_LOCATION}"
     - "--delivery-pipeline=${_PIPELINE_NAME}"
