@@ -7,15 +7,11 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'push', '${_IMAGE_PATH}']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args:
-      [
-        "beta", "deploy", "releases", "create", "release-${SHORT_SHA}",
-        "--delivery-pipeline", "${_PIPELINE_NAME}",
-        "--region", "${_LOCATION}",
-        "--annotations", "commitId=${REVISION_ID}",
-        "--images", "${_IMAGE}=${_IMAGE_PATH}:$SHORT_SHA"
-      ]
+    args: - "gcloud beta deploy releases create release-$SHORT_SHA"
+    - "--project=${_PROJECT_ID}"
+    - "--region=${_LOCATION}"
+    - "--delivery-pipeline=${_PIPELINE_NAME}"
+    - "--images=${_IMAGE}-image=${_IMAGE_PATH}:$SHORT_SHA"
 images:
 - '${_IMAGE_PATH}'
 substitutions:
@@ -23,4 +19,4 @@ substitutions:
   _IMAGE: springboot-demo # default value
   _LOCATION: us-central1 # default value
   _PIPELINE_NAME: springboot-demo-pipeline # default value
-  _IMAGE_PATH: us-central1-docker.pkg.dev/cloud-deploy-showcase/springboot-demo-repository/springboot-demo # default value
+  _IMAGE_PATH: us-central1-docker.pkg.dev/cloud-deploy-showcase/springboot-demo-repository/springboot-demo
