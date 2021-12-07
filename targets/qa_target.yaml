@@ -4,4 +4,4 @@ metadata:
  name: qa-cluster
 description: qa cluster
 gke:
- cluster: projects/cloud-deploy-showcase/locations/us-central1/clusters/qa-cluster
+ cluster: projects/cloud-deploy-showcase/locations/us-central1-b/clusters/qa-cluster

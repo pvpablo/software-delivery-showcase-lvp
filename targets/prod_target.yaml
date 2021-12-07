@@ -5,4 +5,4 @@ metadata:
 description: prod cluster
 requireApproval: true
 gke:
- cluster: projects/cloud-deploy-showcase/locations/us-central1/clusters/prod-cluster
+ cluster: projects/cloud-deploy-showcase/locations/us-central1-b/clusters/prod-cluster

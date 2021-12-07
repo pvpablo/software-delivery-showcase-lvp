@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      [
+        "beta", "deploy", "releases", "promote",
+        "--delivery-pipeline", "${_PIPELINE_NAME}",
+        "--release", "release-${SHORT_SHA}"
+      ]
+substitutions:
+  _PIPELINE_NAME: springboot-demo-pipeline # default value

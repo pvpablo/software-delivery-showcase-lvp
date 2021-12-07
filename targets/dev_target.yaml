@@ -4,4 +4,4 @@ metadata:
  name: dev-cluster
 description: development cluster
 gke:
- cluster: projects/cloud-deploy-showcase/locations/us-central1/clusters/dev-cluster
+ cluster: projects/cloud-deploy-showcase/locations/us-central1-b/clusters/dev-cluster
