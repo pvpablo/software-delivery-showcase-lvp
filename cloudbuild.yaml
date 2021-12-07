@@ -15,8 +15,8 @@ steps:
 images:
 - '${_IMAGE_PATH}'
 substitutions:
-  _REPOSITORY:  # default value
-  _IMAGE:  # default value
-  _LOCATION:  # default value
-  _PIPELINE_NAME:  # default value
-  _IMAGE_PATH: -docker.pkg.dev/cloud-deploy-showcase//
+  _REPOSITORY: springboot-demo-repository # default value
+  _IMAGE: springboot-demo # default value
+  _LOCATION: us-central1 # default value
+  _PIPELINE_NAME: springboot-demo-pipeline # default value
+  _IMAGE_PATH: us-central1-docker.pkg.dev/cloud-deploy-showcase/springboot-demo-repository/springboot-demo
