@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: springboot-demo
-        image: springboot-demo-image
+        image: software-delivery-demo
         ports:
         - containerPort: 8080
